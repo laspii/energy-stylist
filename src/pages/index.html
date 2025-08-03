@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика: Умная система записи к парикмахеру</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 384px;
+            }
+        }
+        .flow-arrow {
+            color: #366E8A;
+            font-size: 2rem;
+            line-height: 1;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+        .kpi-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#F0F8FF]">
+    <!-- Palette: Brilliant Blues -->
+    <!-- Narrative Plan: Introduction -> Client's Journey -> Master's Control Center -> The AI Engine -> KPIs. This tells a coherent story from the user's perspective to the system's impact. -->
+    <!-- Visualization Choices:
+        - Client Journey: Goal: Organize -> Chosen: HTML/CSS Flow Chart. Justification: Best for showing a linear process without SVG/Mermaid.
+        - Master's Dashboard: Goal: Inform/Compare -> Chosen: Donut & Bar Charts (Chart.js), Big Numbers. Justification: Standard, effective dashboard widgets. No SVG.
+        - AI Engine: Goal: Organize -> Chosen: HTML/CSS Flow Chart. Justification: Clearly illustrates the AI's cyclical process without SVG/Mermaid.
+        - KPIs: Goal: Compare/Inform -> Chosen: Line Chart (Chart.js), Big Numbers with Unicode Icons. Justification: Shows trends and highlights key metrics effectively. No SVG.
+    -->
+    <!-- Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. -->
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C] mb-4">Умный Салон: Революция в записи на стрижку</h1>
+            <p class="text-lg text-[#366E8A] max-w-3xl mx-auto">Визуализация полного цикла работы современной системы онлайн-записи, где технологии и искусственный интеллект работают для удобства клиента и мастера.</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="client-journey">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-8">Путь Клиента: От желания до кресла</h2>
+                <p class="text-center text-[#366E8A] mb-10 max-w-2xl mx-auto">Каждый шаг клиента интуитивно понятен и прост. Система ведет его от выбора услуги до получения персональных предложений, делая процесс максимально комфортным.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md w-full">
+                            <div class="text-3xl mb-3">🖥️</div>
+                            <h3 class="font-bold text-[#003F5C]">1. Просмотр сайта</h3>
+                            <p class="text-sm text-[#366E8A]">Знакомство с услугами и работами мастера.</p>
+                        </div>
+                    </div>
+                    <div class="flex-col items-center justify-center hidden lg:flex">
+                        <div class="flow-arrow">&rarr;</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md w-full">
+                            <div class="text-3xl mb-3">🗓️</div>
+                            <h3 class="font-bold text-[#003F5C]">2. Выбор времени</h3>
+                            <p class="text-sm text-[#366E8A]">Выбор удобной даты и времени в календаре.</p>
+                        </div>
+                    </div>
+                    <div class="flex-col items-center justify-center hidden lg:flex">
+                        <div class="flow-arrow">&rarr;</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md w-full">
+                            <div class="text-3xl mb-3">✅</div>
+                            <h3 class="font-bold text-[#003F5C]">3. Подтверждение</h3>
+                            <p class="text-sm text-[#366E8A]">Ввод данных и получение мгновенного подтверждения.</p>
+                        </div>
+                    </div>
+                    <div class="w-full col-span-1 md:col-span-3 lg:col-span-5 flex justify-center my-4">
+                         <div class="flow-arrow transform rotate-90 lg:rotate-0">&darr;</div>
+                    </div>
+                     <div class="flex flex-col items-center lg:col-start-2">
+                        <div class="bg-white p-6 rounded-lg shadow-md w-full">
+                            <div class="text-3xl mb-3">💡</div>
+                            <h3 class="font-bold text-[#003F5C]">5. Персональные предложения</h3>
+                            <p class="text-sm text-[#366E8A]">Получение предложений от ИИ на основе визитов.</p>
+                        </div>
+                    </div>
+                     <div class="flex-col items-center justify-center hidden lg:flex">
+                        <div class="flow-arrow">&larr;</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md w-full">
+                            <div class="text-3xl mb-3">📞</div>
+                            <h3 class="font-bold text-[#003F5C]">4. Напоминание</h3>
+                            <p class="text-sm text-[#366E8A]">Автоматический звонок-напоминание перед визитом.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="master-dashboard">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-8">Центр Управления Мастера</h2>
+                 <p class="text-center text-[#366E8A] mb-10 max-w-2xl mx-auto">Мастер получает полный контроль над своим расписанием и клиентской базой через удобную и наглядную панель администратора.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4 text-center">Распределение услуг (за месяц)</h3>
+                        <p class="text-center text-sm text-[#366E8A] mb-4">Визуализация популярности различных услуг помогает понять предпочтения клиентов и сфокусироваться на самых востребованных процедурах.</p>
+                        <div class="chart-container">
+                            <canvas id="servicesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4 text-center">Загруженность по дням недели</h3>
+                         <p class="text-center text-sm text-[#366E8A] mb-4">Анализ записей по дням недели позволяет оптимизировать рабочие часы и эффективно распределять нагрузку в течение недели.</p>
+                        <div class="chart-container">
+                            <canvas id="bookingsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-engine">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-8">Двигатель Системы: Как работает ИИ</h2>
+                <p class="text-center text-[#366E8A] mb-10 max-w-2xl mx-auto">Искусственный интеллект работает в фоновом режиме, анализируя данные и автоматизируя рутинные задачи, чтобы улучшить сервис и повысить лояльность клиентов.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-center text-center space-y-6 md:space-y-0 md:space-x-6">
+                        <div class="flex-1">
+                            <div class="text-3xl mb-3">📊</div>
+                            <h3 class="font-semibold text-[#003F5C]">1. Анализ данных</h3>
+                            <p class="text-sm text-[#366E8A]">ИИ изучает историю посещений и предпочтения каждого клиента.</p>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flex-1">
+                            <div class="text-3xl mb-3">🧠</div>
+                            <h3 class="font-semibold text-[#003F5C]">2. Формирование гипотез</h3>
+                            <p class="text-sm text-[#366E8A]">Определяет, когда клиенту может понадобиться следующая стрижка или услуга.</p>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flex-1">
+                            <div class="text-3xl mb-3">✉️</div>
+                            <h3 class="font-semibold text-[#003F5C]">3. Создание предложения</h3>
+                            <p class="text-sm text-[#366E8A]">Генерирует персональное сообщение с предложением записаться.</p>
+                        </div>
+                        <div class="flow-arrow">&rarr;</div>
+                        <div class="flex-1">
+                            <div class="text-3xl mb-3">🚀</div>
+                            <h3 class="font-semibold text-[#003F5C]">4. Умная отправка</h3>
+                            <p class="text-sm text-[#366E8A]">Отправляет предложение в оптимальное время для клиента.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="kpis">
+                <h2 class="text-3xl font-bold text-[#003F5C] text-center mb-8">Результаты в Цифрах</h2>
+                <p class="text-center text-[#366E8A] mb-10 max-w-2xl mx-auto">Внедрение умной системы напрямую влияет на ключевые показатели эффективности, повышая доход и лояльность клиентской базы.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4 text-center">Рост повторных визитов</h3>
+                        <p class="text-center text-sm text-[#366E8A] mb-4">Персональные предложения и своевременные напоминания стимулируют клиентов возвращаться снова и снова.</p>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="retentionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="kpi-icon text-[#366E8A]">📈</div>
+                            <div class="text-4xl font-bold text-[#003F5C] my-2">+35%</div>
+                            <p class="text-[#366E8A]">Увеличение повторных записей</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="kpi-icon text-[#366E8A]">⏰</div>
+                            <div class="text-4xl font-bold text-[#003F5C] my-2">-50%</div>
+                            <p class="text-[#366E8A]">Снижение неявок</p>
+                        </div>
+                         <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="kpi-icon text-[#366E8A]">🤖</div>
+                            <div class="text-4xl font-bold text-[#003F5C] my-2">100%</div>
+                            <p class="text-[#366E8A]">Автоматизация напоминаний</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-[#ADD8E6]">
+            <p class="text-[#366E8A]">&copy; 2025 Умный Салон. Все процессы визуализированы.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            dark: '#003F5C',
+            mediumDark: '#366E8A',
+            mediumLight: '#74A6B6',
+            light: '#ADD8E6',
+            extraLight: '#F0F8FF'
+        };
+
+        function wrapLabel(label, maxWidth = 16) {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+        
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const servicesCtx = document.getElementById('servicesChart').getContext('2d');
+        new Chart(servicesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Стрижка модельная', 'Окрашивание в один тон', 'Сложное окрашивание', 'Уходовые процедуры'],
+                datasets: [{
+                    label: 'Распределение услуг',
+                    data: [45, 25, 15, 15],
+                    backgroundColor: [
+                        brilliantBlues.dark,
+                        brilliantBlues.mediumDark,
+                        brilliantBlues.mediumLight,
+                        brilliantBlues.light,
+                    ],
+                    borderColor: brilliantBlues.extraLight,
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...tooltipTitleCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        const bookingsCtx = document.getElementById('bookingsChart').getContext('2d');
+        new Chart(bookingsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+                datasets: [{
+                    label: 'Количество записей',
+                    data: [5, 7, 8, 10, 15, 18, 4],
+                    backgroundColor: brilliantBlues.mediumDark,
+                    borderColor: brilliantBlues.dark,
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                     ...tooltipTitleCallback.plugins,
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        const retentionCtx = document.getElementById('retentionChart').getContext('2d');
+        new Chart(retentionCtx, {
+            type: 'line',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл'],
+                datasets: [
+                {
+                    label: 'До внедрения ИИ',
+                    data: [55, 58, 56, 60, 62, 61, 64],
+                    borderColor: brilliantBlues.mediumLight,
+                    backgroundColor: 'transparent',
+                    tension: 0.4
+                },
+                {
+                    label: 'После внедрения ИИ',
+                    data: [55, 60, 65, 72, 78, 85, 90],
+                    borderColor: brilliantBlues.dark,
+                    backgroundColor: 'rgba(0, 63, 92, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                     ...tooltipTitleCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
